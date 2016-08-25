@@ -1,0 +1,104 @@
+body{
+  background: lightgray;
+}
+
+.wrapper{
+  background: #fff;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 0;
+}
+.wrapper:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.services{
+  max-height: 150px;
+  overflow: hidden; /*this clips any overflow and hides it so the bottom of each services
+                      box ends at the same point*/
+}
+.services:after{
+  content: "";    /*this sets the formatting back to regular document flow*/
+  display: block;
+  clear: both;
+}
+.service h2, .service p{
+  color: #999;
+  margin: 10px 0;
+  text-align: center;
+}
+.service{
+  float: left;
+  background: #eee;
+  width: 29%;
+  margin: 1%;
+  padding: 1%;
+  height: 140px;
+}
+.content{
+  padding: 10px;
+  clear: left;
+  margin: 20px 1%;
+  position: relative;
+}
+.content p{
+  -webkit-column-count: 3;
+  column-count: 3; /*for browsers that don't support webkit*/
+  -webkit-column-gap:50px;
+  column-gap: 50px; /*this is for browsers that don't support webkit*/
+  -webkit-column-rule: 1px solid #ccc;
+  column-rule: 1px solid #ccc;
+  text-align: justify;
+}
+
+section, aside{
+  float: left;
+  width: 46%;
+  padding: 1%;
+  margin: 1%;
+  background: #f2f2f2;
+}
+.columns:after{
+  display: block;
+  content: "";
+  clear: both;
+}
+#banner{
+  max-height: 300px;
+  overflow: hidden;
+  margin: 1%;
+  position: relative;
+  z-index: 2;
+}
+#banner h2{
+  position: absolute;
+  top: 30px;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+nav{
+  background: #333;
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  z-index: 1; /*this moves it up the stacking order above anything with z-index: 0; which is default */
+}
+
+/*below is how you clear a float, it's clearing for the nav li float below it*/
+nav ul:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+nav li{
+  list-style-type: none;
+  margin: 0 10px;
+  color: #fff;
+  float: right;
+}
